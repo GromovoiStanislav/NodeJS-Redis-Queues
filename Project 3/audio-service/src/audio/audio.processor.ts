@@ -7,9 +7,18 @@ export class AudioProcessor {
   private readonly logger = new Logger(AudioProcessor.name);
 
   @Process("transcode")
-  handleTranscode(job: Job) {
+  async handleTranscode(job: Job) {
     this.logger.debug("Start transcoding...");
     this.logger.debug(job.data);
+
+    let progress = 0;
+    for (let i = 0; i < 100; i++) {
+      //await doSomething(job.data);
+      progress += 1;
+      await job.progress(progress);
+    }
     this.logger.debug("Transcoding completed");
+
+    return { status: "OK" };
   }
 }

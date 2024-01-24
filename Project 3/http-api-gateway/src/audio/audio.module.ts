@@ -1,6 +1,7 @@
 import { BullModule } from '@nestjs/bull';
 import { Module } from '@nestjs/common';
 import { AudioController } from './audio.controller';
+import { AudioConsumer } from "./audio.consumer";
 
 @Module({
   imports: [
@@ -9,6 +10,6 @@ import { AudioController } from './audio.controller';
     }),
   ],
   controllers: [AudioController],
-  providers: [],
+  providers: [AudioConsumer],
 })
 export class AudioModule {}
