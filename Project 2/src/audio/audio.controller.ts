@@ -14,6 +14,17 @@ export class AudioController {
     await this.audioQueue.add("transcode", {
       file: "audio.mp3"
     });
+
+    const job = await this.audioQueue.add(
+      {
+        foo: "bar"
+      },
+      { lifo: true }
+    );
+
     return "OK";
   }
+
+
+
 }

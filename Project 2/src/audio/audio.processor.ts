@@ -11,5 +11,18 @@ export class AudioProcessor {
     this.logger.debug("Start transcoding...");
     this.logger.debug(job.data);
     this.logger.debug("Transcoding completed");
+    return {file: "audio-completed.mp3"};
+  }
+
+  @Process()
+  async transcode(job: Job<unknown>) {
+    let progress = 0;
+    this.logger.debug(job.data);
+    for (let i = 0; i < 100; i++) {
+      //await doSomething(job.data);
+      progress += 1;
+      await job.progress(progress);
+    }
+    return {bar: 'biz',};
   }
 }
