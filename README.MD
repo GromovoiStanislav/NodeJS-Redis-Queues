@@ -1,3 +1,5 @@
 ## NodeJS Redis-Queues examples
 
-- Bee-Queue simple example
+- 1 - Bee-Queue simple example
+- 2 - NestJS with Bull Queues simple example
+- 3 - NestJS with Bull Queues microservice simple example
