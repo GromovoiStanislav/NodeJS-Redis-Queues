@@ -11,16 +11,22 @@ export class AudioController {
 
   @Post("transcode")
   async transcode() {
-    await this.audioQueue.add("transcode", {
-      file: "audio.mp3"
-    });
+    {
+      const job = await this.audioQueue.add("transcode", {
+        file: "audio.mp3"
+      });
+      console.log(`transcode id: ${job.id}`)
+    }
 
-    const job = await this.audioQueue.add(
-      {
-        foo: "bar"
-      },
-      { lifo: true }
-    );
+    {
+      const job = await this.audioQueue.add(
+        {
+          foo: "bar"
+        },
+        { lifo: true }
+      );
+      console.log(`default id: ${job.id}`)
+    }
 
     return "OK";
   }
