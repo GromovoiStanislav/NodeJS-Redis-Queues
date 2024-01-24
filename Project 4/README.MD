@@ -1,1 +1,1 @@
-## NestJS with Bull Queues example\*
+## NestJS with Bull Queues example
