@@ -1,8 +1,8 @@
 import { BullModule } from "@nestjs/bull";
 import { Module } from "@nestjs/common";
-import { TradeController } from "./trades.controller";
-import { TradeProcessor } from "./trades.processor";
-import { TradeService } from "./trades.service";
+import { TradeController } from "./trade.controller";
+import { TradeProcessor } from "./trade.processor";
+import { TradeService } from "./trade.service";
 import { QUEUE_DEFAULT, QUEUE_TRADES } from "../common/const";
 
 

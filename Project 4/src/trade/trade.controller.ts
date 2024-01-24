@@ -1,5 +1,5 @@
 import { Controller, Post } from "@nestjs/common";
-import { TradeService } from "./trades.service";
+import { TradeService } from "./trade.service";
 
 
 @Controller("trades")

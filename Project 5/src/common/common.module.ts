@@ -1,9 +1,8 @@
 import { BullModule } from "@nestjs/bull";
 import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
-import { TradeModule } from "./trade/trade.module";
-import { DefaultModule } from "./default/default.module";
-import { MonitorModule } from "./monitor/monitor.module";
+import { QUEUE_DEFAULT, QUEUE_TRADES } from "./const";
+
 
 @Module({
   imports: [
@@ -21,14 +20,17 @@ import { MonitorModule } from "./monitor/monitor.module";
       }),
       inject: [ConfigService]
     }),
-
-    TradeModule,
-    DefaultModule,
-    MonitorModule
-
+    BullModule.registerQueue({
+      name: QUEUE_DEFAULT,
+    }),
+    BullModule.registerQueue({
+      name: QUEUE_TRADES,
+    }),
   ],
-  controllers: [],
-  providers: []
+
+  exports: [
+    BullModule
+  ]
 })
-export class AppModule {
+export class CommonModule {
 }

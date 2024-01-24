@@ -10,10 +10,11 @@ import {
   QUEUE_DEFAULT,
   QUEUE_TRADES
 } from "../common/const";
+import { Cron, CronExpression } from "@nestjs/schedule";
 
 
 @Injectable()
-export class TradeService {
+export class WorkerService {
 
   private readonly logger = new Logger(this.constructor.name);
 
@@ -23,6 +24,7 @@ export class TradeService {
   ) {
   }
 
+  @Cron(CronExpression.EVERY_SECOND)
   async add() {
     const uuid = randomUUID();
 
