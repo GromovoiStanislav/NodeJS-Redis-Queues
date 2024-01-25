@@ -1,0 +1,12 @@
+@api = http://localhost:3000
+
+
+### 
+POST {{api}}/publish
+Content-Type: application/json
+
+{
+    "title": "test book", 
+    "author": "me",
+    "year": 2022
+}
