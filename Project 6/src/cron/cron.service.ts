@@ -16,7 +16,7 @@ export class CronService {
   @Cron(CronExpression.EVERY_MINUTE)
   handleCron() {
     const uuid = randomUUID();
-    this.logger.log(`Queing job: ${uuid}`);
+    this.logger.log(`Queueing job: ${uuid}`);
     this.cronJobsQueue.add({ value: uuid });
   }
 }

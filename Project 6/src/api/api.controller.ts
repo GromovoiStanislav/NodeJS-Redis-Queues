@@ -13,7 +13,7 @@ export class ApiController {
 
   @Post("add/:a/:b")
   mathAdd(@Param("a") a: number, @Param("b") b: number): void {
-    this.logger.log(`Queing job: math add ${a} and ${b}`);
+    this.logger.log(`Queueing job: math add ${a} and ${b}`);
     this.mathAddQueue.add({ a: +a, b: +b });
   }
 }
