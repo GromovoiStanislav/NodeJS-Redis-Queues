@@ -1,0 +1,17 @@
+@api = http://localhost:3000
+
+
+### 
+POST {{api}}/audio/transcode
+
+### 
+DELETE {{api}}/audio/completed
+
+### 
+DELETE {{api}}/audio/failed
+
+### 
+DELETE {{api}}/audio/waiting
+
+### 
+DELETE {{api}}/audio/all
