@@ -1,0 +1,8 @@
+@api = http://localhost:3000
+
+
+### 
+GET {{api}}/redis/blocking
+
+### 
+GET {{api}}/redis/non-blocking

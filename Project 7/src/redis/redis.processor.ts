@@ -1,14 +1,14 @@
-import { Process, Processor } from '@nestjs/bull';
-import { Logger } from '@nestjs/common';
-import { Job } from 'bull';
-import { CronJob } from '../common/models/cron.job';
+import { Process, Processor } from "@nestjs/bull";
+import { Logger } from "@nestjs/common";
+import { Job } from "bull";
+import { RedisJob } from "./models/redis.job";
 
-@Processor('cron-jobs')
-export class CronJobsProcessor {
+@Processor('QUEUE_DEMO')
+export class RedisProcessor {
   protected readonly logger = new Logger(this.constructor.name);
 
   @Process()
-  process(job: Job<CronJob>) {
-    this.logger.log(`Cron job result: ${job.data.value}`);
+  process(job: Job<RedisJob>) {
+    this.logger.log(`Redis job result: ${job.data.uuid}`);
   }
 }

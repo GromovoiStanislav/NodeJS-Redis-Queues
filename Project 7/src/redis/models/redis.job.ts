@@ -1,3 +1,3 @@
-export class CronJob {
-  value: string;
+export class RedisJob {
+  uuid: string;
 }
