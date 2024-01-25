@@ -1,0 +1,6 @@
+@api = http://localhost:3000/api
+
+
+### 
+POST {{api}}/add/5/6
+
