@@ -41,8 +41,8 @@ export class TestProcessor extends WorkerHost {
   }
 
   @OnWorkerEvent("completed")
-  onCompleted(job: Job) {
-    this.logger.log(`Completed ${job.id}`);
+  onCompleted(job: Job, result: any) {
+    this.logger.log(`Completed ${job.id} ${result}`);
   }
 
   @OnWorkerEvent("failed")

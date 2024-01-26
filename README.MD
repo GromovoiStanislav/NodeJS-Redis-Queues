@@ -8,9 +8,9 @@
 - 6 - NestJS with Bull Queues example\*
 - 7 - NestJS with Bull Queues example
 - 8 - NestJS with Bull Queues simple example
-- 9 - NestJS with Bull Queues simple example
+- 9.1 - NestJS with Bull Queues simple example
+- 9.2 - NestJS with BullMQ Queues simple example
 - 10 - NestJS with Bull Queues simple example
 - 11 - NestJS with Bull Queues simple example and bull-board
-- 11 - NestJS with Bull Queues simple example and bull-board
-- 12 - NestJS with Bull Queues simple example and bull-board\*
-- 13 - NestJS with Bull Queues simple example and bull-board
+- 12 - NestJS with BullMQ Queues simple example and bull-board\*
+- 13 - NestJS with BullMQ Queues simple example and bull-board

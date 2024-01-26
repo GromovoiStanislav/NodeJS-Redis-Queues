@@ -1,10 +1,7 @@
 import { Module } from "@nestjs/common";
 import { BullModule } from "@nestjs/bullmq";
-import { BullBoardModule } from "@bull-board/nestjs";
-import { FeatureModule } from "./feature/feature.module";
-import { ExpressAdapter } from "@bull-board/express";
 import { ConfigModule } from "@nestjs/config";
-import { AppController } from "./app.controller";
+import { AudioModule } from "./audio/audio.module";
 
 @Module({
   imports: [
@@ -20,20 +17,9 @@ import { AppController } from "./app.controller";
       defaultJobOptions: {}
     }),
 
-    BullBoardModule.forRoot({
-      route: "/queues",
-      adapter: ExpressAdapter
-    }),
-
-    BullModule.registerQueue({
-      name: "feature_queue"
-    }),
-
-    FeatureModule
+    AudioModule
   ],
-  controllers: [
-    AppController
-  ],
+  controllers: [],
   providers: []
 })
 export class AppModule {

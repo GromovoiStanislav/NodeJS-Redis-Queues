@@ -21,4 +21,9 @@ export class AudioQueueEvents {
   onFailed(job: Job, err: Error) {
     this.logger.debug(`Failed event: ${job.id} ${err.message}`);
   }
+
+  @OnQueueEvent(BullQueueEvents.REMOVED)
+  onRemoved(job: Job) {
+    this.logger.debug(`Removed event: ${job.id}`);
+  }
 }

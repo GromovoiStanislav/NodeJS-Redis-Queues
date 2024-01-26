@@ -1,1 +1,1 @@
-## NestJS with Bull Queues simple example and bull-board
+## NestJS with BullMQ Queues simple example and bull-board
