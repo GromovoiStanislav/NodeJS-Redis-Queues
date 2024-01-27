@@ -4,12 +4,19 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "pong": "node pingpong/pong.js",
+    "ping": "node pingpong/ping.js",
+    "worker": "node express/worker.js",
+    "web": "node express/web.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bee-queue": "^1.7.1"
+    "bee-queue": "^1.7.1",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
   }
 }
+

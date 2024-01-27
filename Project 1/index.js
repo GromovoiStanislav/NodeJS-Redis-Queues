@@ -1,4 +1,5 @@
 import Queue from 'bee-queue';
+
 const addQueue = new Queue('addition');
 
 const job = addQueue.createJob({ x: 2, y: 3 });
