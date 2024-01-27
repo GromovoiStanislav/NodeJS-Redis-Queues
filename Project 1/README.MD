@@ -9,7 +9,9 @@ npm i bee-queue
 #### Start:
 
 ```bash
-npm start
+npm run example-1
+npm run example-2
+npm run example-3
 
 #Ping-pong
 npm run pong

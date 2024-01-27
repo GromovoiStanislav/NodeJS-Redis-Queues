@@ -5,7 +5,7 @@ import express from 'express';
 const app = express();
 app.use(logger('dev'));
 
-const queue = new Queue('express-example');
+const queue = new Queue('express-example', { isWorker: false });
 
 app.get('/run/:x/:y', (req, res) => {
   const job = queue.createJob({
