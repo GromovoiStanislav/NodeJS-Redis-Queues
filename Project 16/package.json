@@ -1,0 +1,16 @@
+{
+  "name": "bull-examples",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "example-1": "node example-1.js",
+    "example-2": "node example-2.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bull": "^4.12.2"
+  }
+}
