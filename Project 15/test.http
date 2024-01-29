@@ -1,0 +1,20 @@
+@api = http://localhost:3000
+
+
+### 
+POST {{api}}/ok
+
+### 
+POST {{api}}/fail
+
+### 
+DELETE {{api}}/completed
+
+### 
+DELETE {{api}}/failed
+
+### 
+DELETE {{api}}/waiting
+
+### 
+DELETE {{api}}/all
