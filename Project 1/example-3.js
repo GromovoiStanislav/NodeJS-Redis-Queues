@@ -35,8 +35,8 @@ queue.getJobs('succeeded', { start: 0, end: 25 }).then((jobs) => {
   console.log(`Job succeeded ids: ${jobIds.join(' ')}`);
 });
 
-queue.getJob(106).then((job) => {
-  console.log(`Job ${job.id} has status ${job.status}`);
+queue.getJob(9).then((job) => {
+  console.log(`Job ${job.id} has status ${job.status}, data: `, job.data);
   job.remove().then(() => console.log('Job was removed'));
 });
 
@@ -51,4 +51,4 @@ process.on('uncaughtException', async () => {
   process.exit(1);
 });
 
-setTimeout(queue.close, 3000);
+setTimeout(async () => await queue.close(), 3000);

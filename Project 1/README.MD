@@ -12,6 +12,7 @@ npm i bee-queue
 npm run example-1
 npm run example-2
 npm run example-3
+npm run example-4
 
 #Ping-pong
 npm run pong
