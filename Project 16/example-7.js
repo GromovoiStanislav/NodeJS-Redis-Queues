@@ -1,6 +1,8 @@
 import 'dotenv/config';
 import Bull from 'bull';
 
+//const queue = new Bull('my-queue', process.env.REDIS_URL);
+// or:
 const queue = new Bull('my-queue', {
   redis: {
     host: process.env.REDIS_HOST,
