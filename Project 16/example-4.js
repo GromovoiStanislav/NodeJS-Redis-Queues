@@ -23,10 +23,13 @@ queue
     job.remove();
   })
   .on('waiting', (jobId) => {
-    console.log('Job ${jobId} is waiting to be processed');
+    console.log(`Job ${jobId} is waiting to be processed`);
   })
   .on('drained', () => {
     console.log('drained');
+  })
+  .on('removed', async (jobid) => {
+    console.log(`Job ${jobid} successfully removed`);
   });
 
 // Jobs producer

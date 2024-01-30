@@ -9,12 +9,14 @@
     "example-3": "node example-3.js",
     "example-4": "node example-4.js",
     "example-5": "node example-5.js",
-    "example-6": "node example-6.js"
+    "example-6": "node example-6.js",
+    "example-7": "node example-7.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bull": "^4.12.2"
+    "bull": "^4.12.2",
+    "dotenv": "^16.4.1"
   }
 }

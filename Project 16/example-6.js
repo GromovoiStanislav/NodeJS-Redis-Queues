@@ -2,11 +2,11 @@ import Bull from 'bull';
 
 const queue = new Bull('my-first-queue');
 
-// await queue.addBulk([
-//   { data: { foo: 'bar 1' }, opts: { removeOnComplete: true } },
-//   { data: { foo: 'bar 2' }, opts: { removeOnComplete: true } },
-//   { data: { foo: 'bar 3' }, opts: { removeOnComplete: true } },
-// ]);
+await queue.addBulk([
+  { data: { foo: 'bar 1' }, opts: { removeOnComplete: true } },
+  { data: { foo: 'bar 2' }, opts: { removeOnComplete: true } },
+  { data: { foo: 'bar 3' }, opts: { removeOnComplete: true } },
+]);
 
 // Local events pass the job instance...
 queue

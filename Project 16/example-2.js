@@ -37,8 +37,8 @@ failed.forEach(async (job) => {
 setTimeout(() => queue.close(), 5000);
 
 queue
-  .on('removed', async (job) => {
-    console.log(`Job ${job.id} successfully removed`);
+  .on('removed', async (jobid) => {
+    console.log(`Job ${jobid} successfully removed`);
   })
   .on('cleaned', (jobs, type) => {
     console.log('Jobs', jobs, 'have been cleaned from the queue', type);
@@ -50,11 +50,3 @@ queue.clean(10000, 'failed');
 
 //cleans all jobs that completed over 5 seconds ago.
 queue.clean(5000);
-
-//Drains a queue deleting all the input lists and associated jobs.
-queue.empty();
-
-//Will remove jobs with ids such as: "boo", "foofighter", etc.
-queue.removeJobs('?oo*').then(function () {
-  console.log('done removing jobs');
-});

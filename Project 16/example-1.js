@@ -39,8 +39,8 @@ queue
   .on('failed', (job, err) => {
     console.log(`Job ${job.id} failed with reason ${err}`);
   })
-  .on('removed', async (job) => {
-    console.log(`Job ${job.id} successfully removed`);
+  .on('removed', async (jobid) => {
+    console.log(`Job ${jobid} successfully removed`);
   })
   .on('error', (error) => {
     console.log(error);

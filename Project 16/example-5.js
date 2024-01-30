@@ -1,6 +1,6 @@
 import Bull from 'bull';
 
-const queue = new Bull('my-first-queue');
+const queue = new Bull('my-queue');
 
 const job = await queue.add(
   { foo: 'bar' },
@@ -22,14 +22,12 @@ queue
   })
   .on('failed', (job, err) => {
     console.log(`Job ${job.id} failed with reason ${err}`);
+  })
+  .on('removed', async (jobid) => {
+    console.log(`Job ${jobid} successfully removed`);
   });
 
 //////////////// process ////////////////////////
-
 queue.process(async (job) => {
-  //return 'OK';
-  // or error:
   throw new Error('Some wrong');
 });
-
-// setTimeout(() => queue.close(), 30000);
