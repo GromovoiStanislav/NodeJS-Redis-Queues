@@ -17,3 +17,4 @@
 - 14 - NestJS with Bull Queues simple example and bull-board
 - 15 - NestJS with BullMQ Queues simple example
 - 16 - Bull simple examples
+- 16 - BullMQ simple examples
