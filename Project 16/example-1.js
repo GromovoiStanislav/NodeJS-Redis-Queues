@@ -2,9 +2,23 @@ import Bull from 'bull';
 
 const queue = new Bull('my-first-queue');
 
-const job = await queue.add({
-  foo: 'bar',
-});
+const job = await queue.add({ foo: 'bar' });
+//const job = await queue.add({ foo: 'bar' }, { removeOnComplete: true });
+//const job = await queue.add({ foo: 'bar' }, { delay: 5000 });
+//const job = await queue.add({ foo: 'bar' }, { lifo: true });
+// const job = await queue.add(
+//   { foo: 'bar' },
+//   {
+//     repeat: {
+//       every: 1000,
+//       limit: 5,
+//     },
+//   }
+// );
+
+// Repeat payment job once every day at 3:15 (am)
+//const job = await queue.add({ foo: 'bar' }, { repeat: { cron: '15 3 * * *' } });
+
 console.log(`Job ${job.id} created`);
 
 // Local events pass the job instance...
@@ -17,8 +31,10 @@ queue
     console.log(`Job ${job.id} is ${progress}% ready!`);
   })
   .on('completed', (job, result) => {
-    console.log(`Job ${job.id} completed! Result: ${result}`);
-    job.remove();
+    console.log(
+      `Job ${job.id} completed! Result: ${result}, Returnvalue: ${job.returnvalue}`
+    );
+    //job.remove();
   })
   .on('failed', (job, err) => {
     console.log(`Job ${job.id} failed with reason ${err}`);
@@ -59,10 +75,12 @@ queue.on('global:completed', (jobId, result) => {
   console.log(`Job ${jobId} completed! Result: ${result}`);
   queue.getJob(jobId).then((job) => {
     if (!!job) {
-      job.remove();
+      //job.remove();
     }
   });
 });
+
+//////////////// process ////////////////////////
 
 queue.process(async (job) => {
   //return doSomething(job.data);
@@ -75,9 +93,9 @@ queue.process(async (job) => {
     job.progress(progress);
   }
 
-  //   return 'OK';
+  return 'OK';
   // or error:
-  throw new Error('Some wrong');
+  // throw new Error('Some wrong');
 });
 
-setTimeout(() => queue.close(), 3000);
+setTimeout(() => queue.close(), 10000);
