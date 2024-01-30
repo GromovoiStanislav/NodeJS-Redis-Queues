@@ -16,4 +16,5 @@ npm run example-4
 npm run example-5
 npm run example-6
 npm run example-7
+npm run example-8
 ```
