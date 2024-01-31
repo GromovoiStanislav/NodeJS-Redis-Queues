@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "build",
+    "target": "ES2022",
+    "module": "NodeNext"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
