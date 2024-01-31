@@ -1,8 +1,8 @@
 import { Job } from 'bullmq';
 
-export async function jobProcessor(job: Job): Promise<'DONE'> {
+export default async function jobProcessor(job: Job): Promise<'DONE'> {
   await job.log(`Started processing job with id ${job.id}`);
-  console.log(`Job with id ${job.id}`, job.data);
+  console.log(`Job with id ${job.id} with`, job.data);
 
   // TODO: do your CPU intense logic here
 
