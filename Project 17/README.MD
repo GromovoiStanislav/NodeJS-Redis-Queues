@@ -1,9 +1,9 @@
-## Bul simple example
+## BullMQ simple example
 
 #### Setup:
 
 ```
-npm i bull
+npm i bullmq
 ```
 
 #### Start:

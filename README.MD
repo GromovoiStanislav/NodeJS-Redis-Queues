@@ -19,3 +19,4 @@
 - 16 - Bull simple examples
 - 17 - BullMQ simple examples
 - 18 - BullMQ with ExpressJS (TS)
+- 19 - Message Queue with BullMQ simple example

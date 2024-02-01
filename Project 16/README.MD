@@ -1,4 +1,4 @@
-## Bul simple example
+## Bull simple example
 
 #### Setup:
 
