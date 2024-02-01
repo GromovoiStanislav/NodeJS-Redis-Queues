@@ -17,4 +17,6 @@ npm run example-5
 npm run example-6
 npm run example-7
 npm run example-8
+npm run example_1:consumer
+npm run example_1:producer
 ```
