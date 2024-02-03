@@ -1,0 +1,17 @@
+{
+  "name": "bullmq-examples",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bullmq": "^5.1.5",
+    "csv-parse": "^5.5.3",
+    "express": "^4.18.2"
+  }
+}

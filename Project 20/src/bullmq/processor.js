@@ -1,0 +1,56 @@
+import { existsSync, unlinkSync, createReadStream, writeFileSync } from 'fs';
+import { parse } from 'csv-parse';
+import { promisify } from 'node:util';
+
+const sleep = promisify(setTimeout);
+
+const fileName = 'employment_indicators.json';
+
+if (existsSync(fileName)) {
+  unlinkSync(fileName);
+}
+
+const extractCSVData = async (jobData) => {
+  try {
+    let result = [];
+
+    await sleep(10000);
+
+    createReadStream(jobData.csvFilePath)
+      .pipe(
+        parse({
+          columns: true,
+        })
+      )
+      .on('data', async (data) => {
+        result.push(data);
+      })
+      .on('error', async (error) => {
+        console.log(error, '????');
+      })
+      .on('end', () => {
+        result = result.reduce((acc, item) => {
+          const key = item.Week_end;
+
+          acc[key] = acc[key] || [];
+          acc[key].push(item);
+          return acc;
+        }, {});
+        const writeData = { [jobData.userName]: result };
+        writeFileSync(fileName, JSON.stringify(writeData));
+      });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const jobProcessor = async (job) => {
+  await job.log(`Started processing job with id ${job.id}`);
+  // TODO: do your CPU intense logic here
+  await extractCSVData(job?.data);
+
+  await job.updateProgress(100);
+  return 'DONE';
+};
+
+export default jobProcessor;
