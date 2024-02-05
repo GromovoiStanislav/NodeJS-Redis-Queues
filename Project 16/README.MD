@@ -1,5 +1,7 @@
 ## Bull simple example
 
+Bull - a job manager for node.js for processing jobs
+
 #### Setup:
 
 ```

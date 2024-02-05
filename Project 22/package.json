@@ -1,0 +1,16 @@
+{
+  "name": "bull-examples",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "startManager": "node --env-file=.env jobManager.js",
+    "startWorker": "node --env-file=.env worker.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bull": "^4.12.2",
+    "ioredis": "^5.3.2"
+  }
+}

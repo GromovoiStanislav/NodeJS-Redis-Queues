@@ -1,5 +1,7 @@
 ## BullMQ simple example
 
+BullMQ - a job manager for node.js for processing jobs
+
 #### Setup:
 
 ```
