@@ -3,13 +3,11 @@ const path = require('node:path');
 const { pathToFileURL } = require('node:url');
 const configModule = require('./config');
 
-let worker;
-
 //const processorPath = path.join(__dirname, 'processor.js');
 const processorPath = pathToFileURL(__dirname + '/processor.js');
 
 const setUpWorker = () => {
-  worker = new Worker('JOBS', processorPath, {
+  const worker = new Worker('JOBS', processorPath, {
     connection: configModule.CONNECTOR,
     autorun: true,
   });

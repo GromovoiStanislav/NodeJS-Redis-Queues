@@ -6,13 +6,12 @@ import { CONNECTOR } from './config.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-let worker;
 
 // const processorPath = path.join(__dirname, 'processor.js');
 const processorPath = pathToFileURL(__dirname + '/processor.js');
 
 const setUpWorker = () => {
-  worker = new Worker('JOBS', processorPath, {
+  const worker = new Worker('JOBS', processorPath, {
     connection: CONNECTOR,
     autorun: true,
   });
